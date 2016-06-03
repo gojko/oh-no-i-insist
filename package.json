@@ -1,0 +1,27 @@
+{
+  "name": "oh-no-i-insist",
+  "version": "1.0.0",
+  "description": "flexible retry for JavaScript promises",
+  "main": "retry.js",
+  "scripts": {
+    "test": "node spec/support/jasmine-runner.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gojko/oh-no-i-insist.git"
+  },
+  "keywords": [
+    "promise",
+    "retry"
+  ],
+  "author": "Gojko Adzic <gojko@gojko.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gojko/oh-no-i-insist/issues"
+  },
+  "homepage": "https://github.com/gojko/oh-no-i-insist#readme",
+  "devDependencies": {
+    "jasmine": "^2.4.1",
+    "jasmine-spec-reporter": "^2.4.0"
+  }
+}
