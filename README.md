@@ -1,6 +1,18 @@
 # Oh, no, I insist
 
+[![Build Status](https://travis-ci.org/gojko/oh-no-i-insist.svg?branch=master)](https://travis-ci.org/gojko/oh-no-i-insist)
+
 Flexible retry for JavaScript promises. Supports native Promises and 3rd party A+ Promise libraries.
+
+## Installation
+
+Install using NPM
+
+```bash
+npm install oh-no-i-insist -S
+```
+
+[![NPM](https://nodei.co/npm/oh-no-i-insist.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/oh-no-i-insist/)
 
 ## Usage
 
