@@ -47,7 +47,27 @@ describe('retry', function () {
 		}).then(done, done.fail);
 		promises.a.resolve('result');
 	});
+	it('supports functions that do not return promises', function (done) {
+		promiseGenerator = function () {
+			return 'result';
+		};
+		retry(promiseGenerator, delay, maxTimes, false, onRetry).then(function (res) {
+			expect(res).toEqual('result');
+			expect(onRetry).not.toHaveBeenCalled();
+		}).then(done, done.fail);
+		promises.a.resolve('result');
+	});
 	it('rejects as soon as the underlying promise resolves with a non retriable error', function (done) {
+		retry(promiseGenerator, delay, maxTimes, dontRetry, onRetry).then(done.fail, function (err) {
+			expect(err).toEqual('result');
+			expect(onRetry).not.toHaveBeenCalled();
+		}).then(done);
+		promises.a.reject('result');
+	});
+	it('supports errors from functions that do not return promises', function (done) {
+		promiseGenerator = function () {
+			throw 'result';
+		};
 		retry(promiseGenerator, delay, maxTimes, dontRetry, onRetry).then(done.fail, function (err) {
 			expect(err).toEqual('result');
 			expect(onRetry).not.toHaveBeenCalled();
