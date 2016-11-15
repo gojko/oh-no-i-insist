@@ -19,7 +19,5 @@ module.exports = function retry(promiseGenerator, delay, maxTimes, predicate, on
 	if (!maxTimes) {
 		return Promise.reject('failing to retry');
 	}
-	return Promise.resolve().then(function () {
-		return promiseGenerator();
-	}).catch(handleFailure);
+	return Promise.resolve().then(promiseGenerator).catch(handleFailure);
 };
